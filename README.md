@@ -1,6 +1,9 @@
 <p align="center">
-<img src="assests/img/macOS-Drive-Cleaner_logo.webp" alt="macOS Drive Cleaner logo" width="150">
+<img src="assets/img/macOS-Drive-Cleaner_logo.webp" alt="macOS Drive Cleaner logo" width="200">
 </p>
+
+<br>
+<br>
 
 ![Windows](https://img.shields.io/badge/Windows-Batch_Script-blue?style=for-the-badge&logo=windows)
 ![macOS](https://img.shields.io/badge/macOS-Shell_Script-lightgrey?style=for-the-badge&logo=apple)
