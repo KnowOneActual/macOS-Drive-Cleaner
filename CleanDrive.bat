@@ -8,6 +8,13 @@ echo.
 
 set /p DriveLetter="Enter the drive letter of your flash drive (e.g., E): "
 
+:: ADDED: Prevent cleaning the main C: drive
+if /i "%DriveLetter%"=="C" (
+    echo.
+    echo SAFETY-STOP: Cleaning the C: drive is not allowed.
+    goto end
+)
+
 :: Basic check to make sure a letter was entered and the drive exists
 if not exist %DriveLetter%:\ (
     echo.

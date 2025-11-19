@@ -29,8 +29,7 @@ fi
 
 echo "\nCleaning..."
 
-# Use dot_clean to merge resource forks, then delete leftovers
-# This is often more effective than just deleting ._* files
+
 echo "Merging resource forks with dot_clean..."
 dot_clean -m "$target_path"
 
@@ -39,11 +38,9 @@ echo "Deleting .DS_Store and ._* files..."
 find "$target_path" -name ".DS_Store" -type f -delete
 find "$target_path" -name "._*" -type f -delete
 
-# Find and delete specific hidden directories
+# UPDATED: Find and delete specific hidden directories in a single pass
 echo "Deleting hidden system directories..."
-find "$target_path" -name ".Trashes" -type d -exec rm -rf {} +
-find "$target_path" -name ".Spotlight-V100" -type d -exec rm -rf {} +
-find "$target_path" -name ".fseventsd" -type d -exec rm -rf {} +
+find "$target_path" -type d \( -name ".Trashes" -o -name ".Spotlight-V100" -o -name ".fseventsd" \) -exec rm -rf {} +
 
 echo "\n---"
 echo "Cleaning complete!"
